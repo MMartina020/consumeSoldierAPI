@@ -19,6 +19,12 @@
             <li th:text="${soldier.weapon}">hands</li>
             <li th:text="${soldier.shotpeople}">0</li>
         </ul>
+        <form method="post" value="/soldiers">
+            <label>shotted enemies</label>
+            <input type="number" name="shotpeople" th:value="${soldier.shotpeople}" th:min="${soldier.shotpeople}">
+            <input type="hidden" name="_method" value="patch">
+            <input type="submit" value="edit">
+        </form>
     </main>
 </body>
 </html>
