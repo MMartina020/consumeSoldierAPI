@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soldier</title>
+</head>
+<body>
+    <header>
+        <nav th:replace="nav::navbar">
+            <a href="index.html">Front page</a>
+            <a href="soldiers.html">Soldiers</a>
+        </nav>
+    </header>
+    <main>
+        <ul>
+            <li th:text="${soldier.id}">0</li>
+            <li th:text="${soldier.rank}">private</li>
+            <li th:text="${soldier.birth}">2001-12-12</li>
+            <li th:text="${soldier.weapon}">hands</li>
+            <li th:text="${soldier.shotpeople}">0</li>
+        </ul>
+    </main>
+</body>
+</html>

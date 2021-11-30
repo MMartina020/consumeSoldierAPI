@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soldier</title>
+</head>
+<body>
+    <header>
+        <nav th:replace="nav::navbar">
+            <a href="index.html">Front page</a>
+            <a href="soldiers.html">Soldiers</a>
+        </nav>
+    </header>
+    <main>
+        <p th:if="${statuscode} == 201" th:text="'New soldier is recruited'"></p>
+        <table cellpadding="15">
+            <tr>
+                <th>rank</th>
+                <th>birth</th>
+                <th>weapon</th>
+                <th>shot people</th>
+            </tr>
+            <tr th:each="soldier : ${soldiers}">
+                <td><a th:text="${soldier.rank}" th:href="'/soldiers/'+${soldier.id}" href="#">private</a></td>
+                <td th:text="${soldier.birth}">birth</td>
+                <td th:text="${soldier.weapon}">weapon</td>
+                <td th:text="${soldier.shotpeople}">shot people</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>
