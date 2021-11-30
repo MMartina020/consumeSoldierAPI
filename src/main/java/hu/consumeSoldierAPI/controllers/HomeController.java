@@ -48,6 +48,11 @@ public class HomeController {
         model.addAttribute("soldiers", service.getSoldiers());
         return "soldiers";
     }
-
+@DeleteMapping("/soldiers")
+    public String disarmSoldier(@RequestParam("id")int id, Model model){
+        service.disarmSoldier(id);
+    model.addAttribute("soldiers", service.getSoldiers());
+    return "soldiers";
+}
 
 }

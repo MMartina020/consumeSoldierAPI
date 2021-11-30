@@ -42,4 +42,9 @@ public class SoldierService {
                 Soldier.class);
         return responseEntity.getStatusCodeValue();
     }
+
+    public void disarmSoldier(int id) {
+        String url = REST_URL+"/{id}";
+        restTemplate.delete(url, id);
+    }
 }
